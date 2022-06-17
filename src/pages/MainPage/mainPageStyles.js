@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
-const MainPageContainer = styled.div`
+export const MainPageContainer = styled.section`
 	height: 100vh;
 	width: 100%;
 `;
 
-export default MainPageContainer;
+export const SettingsSection = styled.div`
+	border: 1px solid red;
+	height: 150px;
+	width: 100%;
+`;

@@ -1,11 +1,15 @@
 import React from 'react';
-import MainPageContainer from './mainPageStyles';
-import SettingsSection from '../../components/SettingsSection';
+import {
+	MainPageContainer,
+	SettingsSection
+} from './mainPageStyles';
 
 const MainPage = () => {
 	return (
 		<MainPageContainer>
-			<SettingsSection />
+			<SettingsSection>
+
+			</SettingsSection>
 		</MainPageContainer>
 	);
 };
