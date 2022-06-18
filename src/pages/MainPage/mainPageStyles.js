@@ -20,10 +20,9 @@ export const Select = styled.select`
 	background-color: #B1EDE8;
 	border-radius: 15px;
 	color: #FF6B6B;
-	font-size: 1.3rem;
+	font-size: 1.5vw;
 	font-weight: 700;
 	font-style: italic;
-	height: 35px;
 	padding: 5px;
 	text-align: center;
 	width: 100%;

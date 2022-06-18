@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SelectOption from '../../components/SelectOption';
 import getCategories from '../../helpers/getCategories';
 import getOrganizedCategories from '../../helpers/getOrganizedCategories';
+import Paragraph from '../../components/Paragraph';
 import {
 	MainPageContainer,
 	SettingsSection,
@@ -38,6 +39,7 @@ const MainPage = () => {
 		<MainPageContainer>
 			<SettingsSection>
 				<SelectContainer>
+					<Paragraph paragraph='Categories' />
 					<Select
 						name='categorie'
 						onChange={ onCategorieChange }
@@ -56,6 +58,7 @@ const MainPage = () => {
 					</Select>
 				</SelectContainer>
 				<SelectContainer>
+					<Paragraph paragraph='Difficulty' />
 					<Select
 						name='difficulty'
 						onChange={ onCategorieChange }
