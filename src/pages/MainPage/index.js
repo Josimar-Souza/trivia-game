@@ -1,14 +1,19 @@
 import React from 'react';
 import {
 	MainPageContainer,
-	SettingsSection
+	SettingsSection,
+	CategoriesSelect
 } from './mainPageStyles';
 
 const MainPage = () => {
 	return (
 		<MainPageContainer>
 			<SettingsSection>
+				<CategoriesSelect
+					name='categories'
+				>
 
+				</CategoriesSelect>
 			</SettingsSection>
 		</MainPageContainer>
 	);
