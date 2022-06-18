@@ -1,4 +1,5 @@
 import React from 'react';
+import SelectOption from '../../components/SelectOption';
 import {
 	MainPageContainer,
 	SettingsSection,
@@ -12,7 +13,7 @@ const MainPage = () => {
 				<CategoriesSelect
 					name='categories'
 				>
-
+					<SelectOption />
 				</CategoriesSelect>
 			</SettingsSection>
 		</MainPageContainer>
