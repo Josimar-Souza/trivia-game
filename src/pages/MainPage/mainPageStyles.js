@@ -16,7 +16,7 @@ export const SettingsSection = styled.div`
 	width: 25%;
 `;
 
-export const SelectContainer = styled.select`
+export const Select = styled.select`
 	background-color: #B1EDE8;
 	border-radius: 15px;
 	color: #FF6B6B;
@@ -24,8 +24,12 @@ export const SelectContainer = styled.select`
 	font-weight: 700;
 	font-style: italic;
 	height: 35px;
-	max-width: 80%;
 	padding: 5px;
 	text-align: center;
+	width: 100%;
+`;
+
+export const SelectContainer = styled.div`
+	max-width: 80%;
 	width: 100%;
 `;

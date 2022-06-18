@@ -5,6 +5,7 @@ import getOrganizedCategories from '../../helpers/getOrganizedCategories';
 import {
 	MainPageContainer,
 	SettingsSection,
+	Select,
 	SelectContainer
 } from './mainPageStyles';
 
@@ -36,38 +37,42 @@ const MainPage = () => {
 	return (
 		<MainPageContainer>
 			<SettingsSection>
-				<SelectContainer
-					name='categorie'
-					onChange={ onCategorieChange }
-				>
-					<SelectOption name='All' value='all' />
-					{
-						categories.map(
-							(categorie, index) =>
-								<SelectOption
-									key={ index }
-									name={ categorie[0] }
-									value={ categorie[1] }
-								/>
-						)
-					}
+				<SelectContainer>
+					<Select
+						name='categorie'
+						onChange={ onCategorieChange }
+					>
+						<SelectOption name='All' value='all' />
+						{
+							categories.map(
+								(categorie, index) =>
+									<SelectOption
+										key={ index }
+										name={ categorie[0] }
+										value={ categorie[1] }
+									/>
+							)
+						}
+					</Select>
 				</SelectContainer>
-				<SelectContainer
-					name='difficulty'
-					onChange={ onCategorieChange }
-				>
-					<SelectOption
-						name='Easy'
-						value='easy'
-					/>
-					<SelectOption
-						name='Medium'
-						value='medium'
-					/>
-					<SelectOption
-						name='Hard'
-						value='hard'
-					/>
+				<SelectContainer>
+					<Select
+						name='difficulty'
+						onChange={ onCategorieChange }
+					>
+						<SelectOption
+							name='Easy'
+							value='easy'
+						/>
+						<SelectOption
+							name='Medium'
+							value='medium'
+						/>
+						<SelectOption
+							name='Hard'
+							value='hard'
+						/>
+					</Select>
 				</SelectContainer>
 			</SettingsSection>
 		</MainPageContainer>
