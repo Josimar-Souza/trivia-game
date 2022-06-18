@@ -5,7 +5,7 @@ import getOrganizedCategories from '../../helpers/getOrganizedCategories';
 import {
 	MainPageContainer,
 	SettingsSection,
-	CategoriesSelect
+	SelectContainer
 } from './mainPageStyles';
 
 const categoriesURL = 'https://the-trivia-api.com/api/categories';
@@ -13,7 +13,8 @@ const categoriesURL = 'https://the-trivia-api.com/api/categories';
 const MainPage = () => {
 	const [categories, setCategories] = useState([]);
 	const [settings, setSettings] = useState({
-		categorie: 'all'
+		categorie: 'all',
+		difficulty: 'easy'
 	});
 
 	useEffect(() => {
@@ -26,8 +27,8 @@ const MainPage = () => {
 		getAllCategories();
 	}, []);
 
-	const onCategorieChange = ({ target: { value } }) => {
-		setSettings({ ...settings, categorie: value });
+	const onCategorieChange = ({ target: { value, name } }) => {
+		setSettings({ ...settings, [name]: value });
 	}
 
 	console.log(settings);
@@ -35,8 +36,8 @@ const MainPage = () => {
 	return (
 		<MainPageContainer>
 			<SettingsSection>
-				<CategoriesSelect
-					name='categories'
+				<SelectContainer
+					name='categorie'
 					onChange={ onCategorieChange }
 				>
 					<SelectOption name='All' value='all' />
@@ -50,7 +51,24 @@ const MainPage = () => {
 								/>
 						)
 					}
-				</CategoriesSelect>
+				</SelectContainer>
+				<SelectContainer
+					name='difficulty'
+					onChange={ onCategorieChange }
+				>
+					<SelectOption
+						name='Easy'
+						value='easy'
+					/>
+					<SelectOption
+						name='Medium'
+						value='medium'
+					/>
+					<SelectOption
+						name='Hard'
+						value='hard'
+					/>
+				</SelectContainer>
 			</SettingsSection>
 		</MainPageContainer>
 	);

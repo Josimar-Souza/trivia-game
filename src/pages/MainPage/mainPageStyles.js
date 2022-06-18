@@ -12,11 +12,11 @@ export const SettingsSection = styled.div`
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
-	justify-content: center;
+	justify-content: space-around;
 	width: 25%;
 `;
 
-export const CategoriesSelect = styled.select`
+export const SelectContainer = styled.select`
 	background-color: #B1EDE8;
 	border-radius: 15px;
 	color: #FF6B6B;
@@ -26,5 +26,6 @@ export const CategoriesSelect = styled.select`
 	height: 35px;
 	max-width: 80%;
 	padding: 5px;
+	text-align: center;
 	width: 100%;
 `;
