@@ -3,11 +3,12 @@ import SelectOption from '../../components/SelectOption';
 import getCategories from '../../helpers/getCategories';
 import getOrganizedCategories from '../../helpers/getOrganizedCategories';
 import Paragraph from '../../components/Paragraph';
+import InputRange from '../../components/InputRange';
 import {
 	MainPageContainer,
 	SettingsSection,
 	Select,
-	SelectContainer
+	SettingsContainer
 } from './mainPageStyles';
 
 const categoriesURL = 'https://the-trivia-api.com/api/categories';
@@ -38,7 +39,7 @@ const MainPage = () => {
 	return (
 		<MainPageContainer>
 			<SettingsSection>
-				<SelectContainer>
+				<SettingsContainer>
 					<Paragraph paragraph='Categories' />
 					<Select
 						name='categorie'
@@ -56,8 +57,8 @@ const MainPage = () => {
 							)
 						}
 					</Select>
-				</SelectContainer>
-				<SelectContainer>
+				</SettingsContainer>
+				<SettingsContainer>
 					<Paragraph paragraph='Difficulty' />
 					<Select
 						name='difficulty'
@@ -76,7 +77,14 @@ const MainPage = () => {
 							value='hard'
 						/>
 					</Select>
-				</SelectContainer>
+				</SettingsContainer>
+				<SettingsContainer>
+					<Paragraph paragraph='Number of Questions: 20' />
+					<InputRange
+						min={ 1 }
+						max={ 20 }
+					/>
+				</SettingsContainer>
 			</SettingsSection>
 		</MainPageContainer>
 	);

@@ -28,7 +28,7 @@ export const Select = styled.select`
 	width: 100%;
 `;
 
-export const SelectContainer = styled.div`
+export const SettingsContainer = styled.div`
 	max-width: 80%;
 	width: 100%;
 `;
