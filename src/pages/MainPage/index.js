@@ -17,7 +17,8 @@ const MainPage = () => {
 	const [categories, setCategories] = useState([]);
 	const [settings, setSettings] = useState({
 		categorie: 'all',
-		difficulty: 'easy'
+		difficulty: 'easy',
+		limit: '5'
 	});
 
 	useEffect(() => {
@@ -30,11 +31,13 @@ const MainPage = () => {
 		getAllCategories();
 	}, []);
 
-	const onCategorieChange = ({ target: { value, name } }) => {
+	const onSelectChange = ({ target: { value, name } }) => {
 		setSettings({ ...settings, [name]: value });
 	}
 
-	console.log(settings);
+	const onInputChange = ({ target: { value, name } }) => {
+		setSettings({ ...settings, [name]: value })
+	}
 
 	return (
 		<MainPageContainer>
@@ -43,7 +46,7 @@ const MainPage = () => {
 					<Paragraph paragraph='Categories' />
 					<Select
 						name='categorie'
-						onChange={ onCategorieChange }
+						onChange={ onSelectChange }
 					>
 						<SelectOption name='All' value='all' />
 						{
@@ -62,7 +65,7 @@ const MainPage = () => {
 					<Paragraph paragraph='Difficulty' />
 					<Select
 						name='difficulty'
-						onChange={ onCategorieChange }
+						onChange={ onSelectChange }
 					>
 						<SelectOption
 							name='Easy'
@@ -79,10 +82,12 @@ const MainPage = () => {
 					</Select>
 				</SettingsContainer>
 				<SettingsContainer>
-					<Paragraph paragraph='Number of Questions: 20' />
+					<Paragraph paragraph={ `Number of Questions: ${settings.limit}` } />
 					<InputRange
 						min={ 1 }
 						max={ 20 }
+						onChange={ onInputChange }
+						name='limit'
 					/>
 				</SettingsContainer>
 			</SettingsSection>
